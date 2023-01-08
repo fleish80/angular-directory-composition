@@ -15,7 +15,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "angularDirectoryComposition",
+            "prefix": "adc",
             "style": "camelCase"
           }
         ],
@@ -23,7 +23,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "angular-directory-composition",
+            "prefix": "adc",
             "style": "kebab-case"
           }
         ]
