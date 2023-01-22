@@ -1,4 +1,4 @@
-import {Directive, HostListener, inject, NgZone} from '@angular/core';
+import {Directive, HostListener, inject} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {take} from 'rxjs';
 
@@ -9,7 +9,6 @@ import {take} from 'rxjs';
 export class EventDirective {
 
     #httpClient = inject(HttpClient);
-    #ngZone = inject(NgZone);
 
     data: any;
 
@@ -18,10 +17,8 @@ export class EventDirective {
         if (!this.data) {
             throw new Error('Please define your data');
         }
-        this.#ngZone.runOutsideAngular(() => {
-            this.#httpClient.post('this.is.my-domain', {user: 'me', data: {}}).pipe(take(1))
+            this.#httpClient.post('this.is.my-domain', {user: 'me', data: this.data}).pipe(take(1))
                 .subscribe();
-        });
     }
 
 }
