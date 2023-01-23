@@ -1,5 +1,5 @@
-import { NgIf } from '@angular/common';
-import {Directive, inject, Input, TemplateRef} from '@angular/core';
+import {NgIf} from '@angular/common';
+import {Directive, inject, Input} from '@angular/core';
 
 @Directive({
   selector: '[adcIfHasRole]',
@@ -11,7 +11,6 @@ import {Directive, inject, Input, TemplateRef} from '@angular/core';
 })
 export class IfHasRoleDirective {
   private ngIfDirective = inject(NgIf);
-  private templateRef = inject(TemplateRef<any>);
 
   @Input('adcIfHasRole') set role(role: 'admin' | 'user') {
     this.ngIfDirective.ngIf = role === 'admin';
