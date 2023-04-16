@@ -1,12 +1,14 @@
-import {NgIf} from '@angular/common';
-import {Directive, inject, Input} from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Directive, inject, Input } from '@angular/core';
 
 @Directive({
   selector: '[adcIfHasRole]',
-  hostDirectives: [{
-    directive: NgIf,
-    inputs: ['ngIfElse: adcIfHasRoleElse']
-  }],
+  hostDirectives: [
+    {
+      directive: NgIf,
+      inputs: ['ngIfElse: adcIfHasRoleElse'],
+    },
+  ],
   standalone: true,
 })
 export class IfHasRoleDirective {
