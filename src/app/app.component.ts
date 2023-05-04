@@ -7,10 +7,11 @@ import { BasicCompositionComponent } from './components/basic-composition.compon
 import { InlineComponent } from './components/inline.component';
 import { EventComponent } from './components/event.component';
 import { ExtendDirectiveComponent } from './components/extend-directive.component';
+import { InjectComponent } from "./components/inject.component";
 
 @Component({
-  selector: 'adc-root',
-  template: `
+    selector: 'adc-root',
+    template: `
     <!--Basic directives example as it was before-->
     <adc-basic adcUnderline color="pink" adcBold (hover)="hoverEventHandler()"></adc-basic>
 
@@ -20,6 +21,9 @@ import { ExtendDirectiveComponent } from './components/extend-directive.componen
     <!--Composition inline inside component-->
     <adc-inline color="blue" (hover)="hoverEventHandler()"></adc-inline>
 
+    <!--Composition inject inside component-->
+    <adc-inject></adc-inject>
+
     <!--Inject directive and send it data-->
     <adc-event></adc-event>
 
@@ -27,20 +31,21 @@ import { ExtendDirectiveComponent } from './components/extend-directive.componen
     <adc-extend-directive role="admin"></adc-extend-directive>
     <adc-extend-directive role="user"></adc-extend-directive>
   `,
-  styles: [],
-  imports: [
-    BoldDirective,
-    UnderlineDirective,
-    MouseenterDirective,
-    BoldDirective,
-    UnderlineDirective,
-    BasicComponent,
-    BasicCompositionComponent,
-    InlineComponent,
-    EventComponent,
-    ExtendDirectiveComponent,
-  ],
-  standalone: true,
+    styles: [],
+    standalone: true,
+    imports: [
+        BoldDirective,
+        UnderlineDirective,
+        MouseenterDirective,
+        BoldDirective,
+        UnderlineDirective,
+        BasicComponent,
+        BasicCompositionComponent,
+        InlineComponent,
+        EventComponent,
+        ExtendDirectiveComponent,
+        InjectComponent
+    ]
 })
 export class AppComponent {
   hoverEventHandler() {

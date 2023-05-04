@@ -12,9 +12,10 @@ import { Directive, inject, Input } from '@angular/core';
   standalone: true,
 })
 export class IfHasRoleDirective {
-  private ngIfDirective = inject(NgIf);
+  
+  #ngIfDirective = inject(NgIf);
 
   @Input('adcIfHasRole') set role(role: 'admin' | 'user') {
-    this.ngIfDirective.ngIf = role === 'admin';
+    this.#ngIfDirective.ngIf = role === 'admin';
   }
 }
