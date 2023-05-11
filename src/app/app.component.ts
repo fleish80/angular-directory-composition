@@ -9,6 +9,7 @@ import { EventComponent } from './components/event.component';
 import { ExtendDirectiveComponent } from './components/extend-directive.component';
 import { InjectComponent } from "./components/inject.component";
 import { BasicInComponent } from './components/basic-in.component';
+import { BasicDirectiveInCompositionComponent } from './components/basic-directive-in-composition.component';
 
 @Component({
     selector: 'adc-root',
@@ -21,6 +22,9 @@ import { BasicInComponent } from './components/basic-in.component';
 
     <!--Composition inline inside directive-->
     <adc-basic-composition adcMouseenter color="green" (hover)="hoverEventHandler()"></adc-basic-composition>
+
+    <!--Composition directive inside component-->
+    <adc-basic-directive-in-composition color="orange" (hover)="hoverEventHandler()"></adc-basic-directive-in-composition>
 
     <!--Composition inline inside component-->
     <adc-inline color="blue" (hover)="hoverEventHandler()"></adc-inline>
@@ -49,7 +53,8 @@ import { BasicInComponent } from './components/basic-in.component';
         EventComponent,
         ExtendDirectiveComponent,
         InjectComponent,
-        BasicInComponent
+        BasicInComponent,
+        BasicDirectiveInCompositionComponent
     ]
 })
 export class AppComponent {
