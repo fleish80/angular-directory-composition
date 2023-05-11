@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   imports: [],
   selector: 'adc-basic',
   template: `
-    basic example
+    <p>basic example</p>
   `,
   styles: [`
       :host {

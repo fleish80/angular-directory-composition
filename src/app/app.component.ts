@@ -8,12 +8,16 @@ import { InlineComponent } from './components/inline.component';
 import { EventComponent } from './components/event.component';
 import { ExtendDirectiveComponent } from './components/extend-directive.component';
 import { InjectComponent } from "./components/inject.component";
+import { BasicInComponent } from './components/basic-in.component';
 
 @Component({
     selector: 'adc-root',
     template: `
     <!--Basic directives example as it was before-->
     <adc-basic adcUnderline color="pink" adcBold (hover)="hoverEventHandler()"></adc-basic>
+
+    <!--Composition inside component-->
+    <adc-basic-in color="green" (hover)="hoverEventHandler()"></adc-basic-in>
 
     <!--Composition inline inside directive-->
     <adc-basic-composition adcMouseenter color="green" (hover)="hoverEventHandler()"></adc-basic-composition>
@@ -44,7 +48,8 @@ import { InjectComponent } from "./components/inject.component";
         InlineComponent,
         EventComponent,
         ExtendDirectiveComponent,
-        InjectComponent
+        InjectComponent,
+        BasicInComponent
     ]
 })
 export class AppComponent {
